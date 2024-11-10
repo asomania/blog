@@ -1,0 +1,9 @@
+.avatar-img img {
+    width: 100%;
+}
+
+.denem {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}

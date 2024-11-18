@@ -1,9 +1,12 @@
 import "./styles/profile-container.css";
 import Input from "../../components/base/Input";
+import Button from "../../components/base/Button";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaSquareGithub } from "react-icons/fa6";
 const ProfileContainer = () => {
   return (
     <>
-      <div className="p-40 d-flex columns j-space-between a-center ibm-font">
+      <div className="p-40 d-flex columns j-space-between a-center ibm-font mvh-100">
         <div className="avatar-img d-flex columns gap-25 w-100">
           <img src="avatar.jpg" alt="" className="denem" />
           <div className="ibm-font">
@@ -27,8 +30,12 @@ const ProfileContainer = () => {
             Sign up now to get access to the library of members-only issues.
           </p>
           <Input type="text" placeholder="Your- email" />
+          <Button />
         </div>
-        <div></div>
+        <div className="d-flex gap-25">
+          <FaSquareXTwitter size={30} color="black" />
+          <FaSquareGithub size={30} color="black" />
+        </div>
       </div>
     </>
   );

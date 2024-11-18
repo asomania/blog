@@ -3,6 +3,7 @@
    License: none (public domain)
 */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
 
 html,
 body,
@@ -178,16 +179,50 @@ body {
     width: 100%;
 }
 
+.p-fixed {
+    position: fixed
+}
+
 .vh-100 {
     height: 100vh;
+}
+
+.mvh-100 {
+    max-height: 100vh;
 }
 
 .w-100 {
     width: 100% !important;
 }
 
+.border {
+    border: #cccccc9a 1px solid;
+}
+
+.p-40 {
+    padding: 40px;
+}
+
+.p-y-80 {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.p-x-40 {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.p-80 {
+    padding: 80px;
+}
+
 .gap-25 {
     gap: 25px;
+}
+
+.mt-25 {
+    margin-top: 25px;
 }
 
 .p-y-10 {
@@ -195,8 +230,51 @@ body {
     padding-bottom: 10px;
 }
 
+.p-10 {
+    padding: 10px
+}
+
+.bg-grey {
+    background-color: #f5f5f5;
+
+}
+
+.border-none {
+    border: none;
+}
+
+.radius-10 {
+    border-radius: 10px;
+}
+
+.logo-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.w-200px {
+    width: 200px;
+}
+
+.gap-15-em {
+    gap: 0.5em;
+}
+
+.text-16 {
+    font-size: 16px;
+}
+
 .p-40 {
     padding: 50px
+}
+
+.source-font {
+    font-family: "Source Serif 4", serif;
+}
+
+.overflow-y {
+    overflow: scroll;
 }
 
 .j-space-between {

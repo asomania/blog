@@ -7,7 +7,7 @@ import { FaBars } from "react-icons/fa6";
 const LeftContainer = () => {
   return (
     <>
-      <div className="d-flex columns j-space-between a-center p-y-10">
+      <div className="d-flex columns j-space-between a-center p-y-10 vh-100">
         <div className="logo ">
           <img src="logo.png" alt="" />
         </div>

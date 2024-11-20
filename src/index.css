@@ -136,9 +136,27 @@ table {
     border-spacing: 0;
 }
 
+
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --text-box-bg: #f5f5f5;
+
+}
+
+.dark-theme {
+    --bg-color: black;
+    --text-color: white;
+    --text-box-bg: #666666;
+}
+
+
 body {
     line-height: 1.5em;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
+
 
 .ibm-font {
     font-family: "IBM Plex Sans", sans-serif;
@@ -225,9 +243,9 @@ body {
     margin-top: 25px;
 }
 
-.p-y-10 {
-    padding-top: 10px;
-    padding-bottom: 10px;
+.p-y-20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .p-10 {
@@ -300,5 +318,13 @@ body {
     width: 100px;
     height: 50px;
     border-radius: 40px;
-    background-color: #f5f5f5;
+    background-color: var(--text-box-bg);
+}
+
+.icon {
+    transition: transform 0.5s ease;
+}
+
+.icon.spin {
+    transform: rotate(360deg);
 }

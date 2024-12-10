@@ -1,5 +1,6 @@
 import { BsDot } from "react-icons/bs";
 import "./styles/home-container.css";
+import { useNavigate } from "react-router-dom";
 
 const HomeContainer = () => {
   const items = [
@@ -45,12 +46,17 @@ const HomeContainer = () => {
     },
   ];
 
+  const navigate = useNavigate();
   return (
     <div className="p-40 overflow-y">
-      <div className="d-flex columns gap-25 ">
+      <div className="d-flex columns gap-25">
         {items.map((item, index) => (
-          <>
-            <div className="d-flex a-center ibm-font gap-15-em" key={index}>
+          <div
+            className="cursor d-flex columns gap-15-em"
+            key={index}
+            onClick={() => navigate("/about")}
+          >
+            <div className="d-flex a-center ibm-font gap-15-em">
               <img
                 src="avatar.png"
                 alt=""
@@ -71,7 +77,7 @@ const HomeContainer = () => {
                 </div>
               </div>
             </div>
-          </>
+          </div>
         ))}
       </div>
     </div>

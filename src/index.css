@@ -231,6 +231,16 @@ body {
     padding-right: 40px;
 }
 
+.p-y-0 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.p-x-20 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 .p-80 {
     padding: 80px;
 }
@@ -292,7 +302,7 @@ body {
 }
 
 .overflow-y {
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .j-space-between {
@@ -327,4 +337,8 @@ body {
 
 .icon.spin {
     transform: rotate(360deg);
+}
+
+.cursor {
+    cursor: pointer;
 }

@@ -1,6 +1,8 @@
 import { BsDot } from "react-icons/bs";
 import "./styles/home-container.css";
 import { useNavigate } from "react-router-dom";
+import api from "../api";
+import { useEffect } from "react";
 
 const HomeContainer = () => {
   const items = [
@@ -45,6 +47,20 @@ const HomeContainer = () => {
       image: "avatar.jpg",
     },
   ];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await api.get("/blogs");
+
+        // Burada veriyi işleyebilirsiniz
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      }
+    };
+
+    fetchData();
+  }, []); // Boş bağımlılık dizisi, sadece bir kez çalıştırmak için
 
   const navigate = useNavigate();
   return (
@@ -54,7 +70,7 @@ const HomeContainer = () => {
           <div
             className="cursor d-flex columns gap-15-em"
             key={index}
-            onClick={() => navigate("/about")}
+            onClick={() => navigate(`/about/${index}`)}
           >
             <div className="d-flex a-center ibm-font gap-15-em">
               <img

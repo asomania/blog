@@ -18,7 +18,7 @@ const Blog = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await api.get(`/posts/${id}`);
+        const response = await api.get(`/blogs/${id}`);
         setPost(response.data);
         setLoading(false);
       } catch (error) {
@@ -40,7 +40,7 @@ const Blog = () => {
 
   return (
     <>
-      <div className="container py-5">
+      <div className="container py-5 ibm-font">
         <div className="row">
           <div className="col-lg-8 mx-auto">
             <article className="blog-post">

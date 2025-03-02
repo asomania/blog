@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import api from "../api";
+import { BsDot } from "react-icons/bs";
+import { SlArrowLeft } from "react-icons/sl";
 
 interface Post {
   title: string;
@@ -43,6 +45,20 @@ const Blog = () => {
       <div className="container py-5 ibm-font">
         <div className="row">
           <div className="col-lg-8 mx-auto">
+            <div className="d-flex a-center>
+              <SlArrowLeft />
+              <div>Geri Dön</div>
+            </div>
+            <div className="d-flex a-center ibm-font gap-15-em">
+              <img
+                src="avatar.png"
+                alt=""
+                className="logo-avatar d-flex a-center j-center"
+              />
+              <p className="grey-text">Eren Küçük</p>
+              <BsDot />
+              <p className="grey-text">2024</p>
+            </div>
             <article className="blog-post">
               <h1 className="blog-post-title mb-4">{post.title}</h1>
 
@@ -70,6 +86,7 @@ const Blog = () => {
                 ))}
               </div>
             </article>
+          </div>
           </div>
         </div>
       </div>

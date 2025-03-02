@@ -12,7 +12,6 @@ const HomeContainer = () => {
       try {
         const response = await api.get("/blogs");
         setItems(response.data);
-        // Burada veriyi işleyebilirsiniz
         console.log(response.data);
       } catch (error) {
         console.error("Error fetching blogs:", error);

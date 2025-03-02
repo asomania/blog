@@ -1,17 +1,29 @@
+version: '3.8'
+
 services:
   mssql:
-    image: mcr.microsoft.com/mssql/server:2019-latest
     container_name: mssql
+    image: mcr.microsoft.com/mssql/server
+    platform: linux/amd64
     ports:
       - "1433:1433"
     environment:
-      SA_PASSWORD: "Eren2002"
+      SA_PASSWORD: "Eren2002!"  # Yeni şifrenizi buraya yazın
       ACCEPT_EULA: "Y"
+    volumes:
+      - mssql-data:/var/opt/mssql  # Veritabanı dosyalarını kalıcı hale getirir
 
   blogapi:
     build:
       context: .
+    container_name: blogapi
     ports:
-      - "80:80"
+      - "1330:1330"
     depends_on:
       - mssql
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=mssql;Database=BlogDb;User Id=sa;Password=Eren2002!;TrustServerCertificate=True;
+
+volumes:
+  mssql-data:  # Volume tanımı

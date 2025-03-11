@@ -19,7 +19,7 @@ const HomeContainer = () => {
     };
 
     fetchData();
-  }, []); // Boş bağımlılık dizisi, sadece bir kez çalıştırmak için
+  }, []);
 
   const navigate = useNavigate();
   return (
@@ -47,7 +47,7 @@ const HomeContainer = () => {
                 <div className="d-flex columns gap-25 j-center">
                   <p className="bold ibm-font">{item.title}</p>
                   <p className="grey-text source-font text-16">
-                    {item.content}
+                    {item.content.substring(0, 100)}...
                   </p>
                 </div>
               </div>

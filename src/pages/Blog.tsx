@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import api from "../api";
-import { BsDot } from "react-icons/bs";
-import { SlArrowLeft } from "react-icons/sl";
+import "./styles/blog.css";
+import Content from "../components/Content";
+import { BlogType } from "../type/Blog";
 
-interface Post {
+export interface Post {
   title: string;
   createdAt: string;
   author: string;
@@ -14,6 +15,11 @@ interface Post {
 }
 const Blog = () => {
   const [post, setPost] = useState<Post>();
+  const [blogContents, setBlogContents] = useState<BlogType>({
+    id: 0,
+    title: "",
+    content: "",
+  });
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
@@ -22,6 +28,11 @@ const Blog = () => {
       try {
         const response = await api.get(`/blogs/${id}`);
         setPost(response.data);
+        setBlogContents({
+          id: response.data.id,
+          title: response.data.title,
+          content: response.data.content,
+        });
         setLoading(false);
       } catch (error) {
         console.error("Error fetching post:", error);
@@ -41,56 +52,48 @@ const Blog = () => {
   }
 
   return (
-    <>
-      <div className="container py-5 ibm-font">
-        <div className="row">
-          <div className="col-lg-8 mx-auto">
-            <div className="d-flex a-center>
-              <SlArrowLeft />
-              <div>Geri Dön</div>
-            </div>
-            <div className="d-flex a-center ibm-font gap-15-em">
-              <img
-                src="avatar.png"
-                alt=""
-                className="logo-avatar d-flex a-center j-center"
-              />
-              <p className="grey-text">Eren Küçük</p>
-              <BsDot />
-              <p className="grey-text">2024</p>
-            </div>
-            <article className="blog-post">
-              <h1 className="blog-post-title mb-4">{post.title}</h1>
+    <div className="medium-blog-container">
+      <div className="blog-header">
+        <h1 className="blog-title">{post.title}</h1>
 
-              <div className="blog-post-meta text-muted mb-4">
+        <div className="author-section">
+          <div className="author-info">
+            <img
+              src="/avatar.png"
+              alt={post.author}
+              className="author-avatar"
+            />
+            <div className="author-details">
+              <div className="author-name">{post.author}</div>
+              <div className="post-meta">
                 <span>{new Date(post.createdAt).toLocaleDateString()}</span>
-                <span className="mx-2">•</span>
-                <span>{post.author}</span>
+                <span className="read-time">· 5 min read</span>
               </div>
-
-              {post.imageUrl && (
-                <img
-                  src={post.imageUrl}
-                  alt={post.title}
-                  className="img-fluid mb-4 rounded"
-                />
-              )}
-
-              <div className="blog-post-content">{post.content}</div>
-
-              <div className="blog-post-tags mt-4">
-                {post.tags?.map((tag, index) => (
-                  <span key={index} className="badge bg-secondary me-2">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </article>
-          </div>
+            </div>
           </div>
         </div>
       </div>
-    </>
+
+      {post.imageUrl && (
+        <div className="feature-image-container">
+          <img src={post.imageUrl} alt={post.title} className="feature-image" />
+        </div>
+      )}
+
+      <div className="blog-content">
+        <div className="content-wrapper">
+          <div className="post-content">{post.content}</div>
+          {blogContents && <Content blogContent={blogContents} />}
+          <div className="tags-section">
+            {post.tags?.map((tag, index) => (
+              <span key={index} className="tag">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

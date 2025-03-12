@@ -23,10 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-# Application Settings
-appsettings.json
-appsettings.*.json
 
-# Docker files
-docker-compose.yml
-docker-compose.*.yml
+api/docker-compose.yml
+api/appsettings.json

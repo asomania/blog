@@ -1,4 +1,3 @@
-import React from "react";
 import CodeEditor from "@uiw/react-textarea-code-editor";
 import { BlogType } from "../type/Blog";
 

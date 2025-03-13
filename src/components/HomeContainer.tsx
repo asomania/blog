@@ -3,10 +3,10 @@ import "./styles/home-container.css";
 import { useNavigate } from "react-router-dom";
 import api from "../api";
 import { useEffect, useState } from "react";
-import { Blog } from "../type/Blog";
+import { BlogType } from "../type/Blog";
 
 const HomeContainer = () => {
-  const [items, setItems] = useState<Blog[]>([]);
+  const [items, setItems] = useState<BlogType[]>([]);
   useEffect(() => {
     const fetchData = async () => {
       try {

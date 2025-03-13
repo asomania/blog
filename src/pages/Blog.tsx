@@ -82,7 +82,6 @@ const Blog = () => {
 
       <div className="blog-content">
         <div className="content-wrapper">
-          <div className="post-content">{post.content}</div>
           {blogContents && <Content blogContent={blogContents} />}
           <div className="tags-section">
             {post.tags?.map((tag, index) => (

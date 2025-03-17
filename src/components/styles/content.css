@@ -1,0 +1,10 @@
+.post-content h1 {
+    font-size: 36px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.light-theme-editor {
+    background-color: #f5f5f5;
+    color: rgb(126, 124, 124);
+}

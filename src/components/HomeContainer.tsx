@@ -29,7 +29,7 @@ const HomeContainer = () => {
           <div
             className="cursor d-flex columns gap-15-em"
             key={index}
-            onClick={() => navigate(`/about/${index + 1}`)}
+            onClick={() => navigate(`/about/${item.id}`)}
           >
             <div className="d-flex a-center ibm-font gap-15-em">
               <img

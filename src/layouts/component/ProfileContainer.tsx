@@ -6,7 +6,7 @@ import { FaSquareGithub } from "react-icons/fa6";
 const ProfileContainer = () => {
   return (
     <>
-      <div className="p-40 d-flex columns j-space-between a-center ibm-font mvh-100">
+      <div className="p-40 d-flex columns j-space-between a-center ibm-font mvh-100 gap-25">
         <div className="avatar-img d-flex columns gap-25 w-100">
           <img src="avatar.jpg" alt="" className="denem" />
           <div className="ibm-font">
@@ -14,10 +14,10 @@ const ProfileContainer = () => {
             <p className="grey-text">Esnaf / Developer at Google</p>
           </div>
         </div>
-        <div className="d-flex columns gap-25">
+        <div className="d-flex columns gap-15">
           <p>Recommended Topics</p>
-          <div className="d-flex flex-wrap gap-25 ">
-            <div className="text-box">Software</div>
+          <div className="d-flex flex-wrap gap-15 text-12 ">
+            <div className="text-box ">Software</div>
             <div className="text-box"> Web</div>
             <div className="text-box">Backend</div>
             <div className="text-box"> Technical</div>

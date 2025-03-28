@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./layouts/Layout";
 import Home from "./pages/Home";
 import About from "./pages/Blog";
+import AboutMe from "./pages/AboutMe";
 import "./App.css";
 import { useSelector } from "react-redux";
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/about/:id" element={<About />} />
+            <Route path="/aboutme" element={<AboutMe />} />
           </Route>
         </Routes>
       </Router>

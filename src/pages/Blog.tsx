@@ -52,7 +52,7 @@ const Blog = () => {
   }
 
   return (
-    <div className="medium-blog-container">
+    <div className="medium-blog-container overflow-y">
       <div className="blog-header">
         <h1 className="blog-title">{post.title}</h1>
 

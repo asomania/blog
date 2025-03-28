@@ -249,6 +249,11 @@ body {
     gap: 25px;
 }
 
+.gap-15 {
+    gap: 15px;
+}
+
+
 .mt-25 {
     margin-top: 25px;
 }
@@ -293,6 +298,11 @@ body {
     font-size: 16px;
 }
 
+.text-12 {
+    font-size: 12px;
+}
+
+
 .p-40 {
     padding: 50px
 }
@@ -325,8 +335,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 50px;
+    width: 80px;
+    height: 40px;
     border-radius: 40px;
     background-color: var(--text-box-bg);
 }

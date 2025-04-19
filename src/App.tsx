@@ -27,8 +27,15 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/about/:id" element={<About />} />
-            <Route path="/aboutme" element={<AboutMe />} />
           </Route>
+          <Route
+            path="/aboutme"
+            element={
+              <Layout leftPanelOnly>
+                <AboutMe />
+              </Layout>
+            }
+          />
         </Routes>
       </Router>
     </div>

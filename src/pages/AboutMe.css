@@ -1,59 +1,171 @@
 .about-container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.about-content {
+.highlight {
+    color: #4f46e5;
+    font-weight: 700;
+}
+
+.hero-section {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    margin-bottom: 5rem;
 }
 
-.profile-section {
-    text-align: center;
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
 }
 
-.profile-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
+.hero-content h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
 }
 
-.info-section {
-    line-height: 1.6;
-}
-
-.skills ul {
-    list-style: none;
-    padding: 0;
+.scrolling-text {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
 }
 
-.skills li {
-    background-color: #f0f0f0;
+.scrolling-text span {
     padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    color: #4f46e5;
+    font-weight: 500;
+}
+
+.image-frame {
+    width: 300px;
+    height: 300px;
     border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-.contact {
-    margin-top: 2rem;
+.image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-@media (min-width: 768px) {
-    .about-content {
-        flex-direction: row;
+.about-section {
+    margin-bottom: 5rem;
+}
+
+.about-section h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.about-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50%;
+    height: 4px;
+    background: #4f46e5;
+    border-radius: 2px;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 800px;
+    margin-bottom: 1.5rem;
+}
+
+/* Skills Section */
+.skills-section {
+    margin-bottom: 5rem;
+}
+
+.skills-section h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #4f46e5;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category li {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 1.1rem;
+}
+
+.contact-section h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.contact-item:hover {
+    color: #4f46e5;
+}
+
+.icon {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column-reverse;
+        text-align: center;
     }
 
-    .profile-section {
-        flex: 1;
+    .hero-content h1 {
+        font-size: 2.5rem;
     }
 
-    .info-section {
-        flex: 2;
+    .scrolling-text {
+        justify-content: center;
+    }
+
+    .about-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
     }
 }

@@ -26,3 +26,4 @@ dist-ssr
 
 api/docker-compose.yml
 api/appsettings.json
+.env

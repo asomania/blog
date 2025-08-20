@@ -6,6 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Veritabanı bağlantı dizesini yapılandırma
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
+builder.Services.AddHttpClient();
+
+
 // DbContext'i ekleyin ve SQL Server kullanarak yapılandırın
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));

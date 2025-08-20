@@ -1,8 +1,8 @@
-import CodeEditor from "@uiw/react-textarea-code-editor";
 import { BlogType } from "../type/Blog";
 import "./styles/content.css";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import DOMPurify from "dompurify";
 
 interface ContentProps {
   blogContent: BlogType | undefined;
@@ -30,6 +30,17 @@ export default function Content({ blogContent }: ContentProps) {
   console.log("Blog İçeriği:", parts);
 
   return (
+    <div
+      dangerouslySetInnerHTML={{
+        __html: DOMPurify.sanitize(blogContent.content),
+      }}
+      className={`post-content ${isDarkTheme} ibm-font`}
+    />
+  );
+}
+
+/*
+return (
     <div className="post-content">
       {parts.map((part, index) =>
         index % 2 === 1 ? (
@@ -52,4 +63,4 @@ export default function Content({ blogContent }: ContentProps) {
       )}
     </div>
   );
-}
+*/

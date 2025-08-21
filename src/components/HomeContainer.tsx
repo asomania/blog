@@ -46,9 +46,12 @@ const HomeContainer = () => {
                 <img src="avatar.jpg" alt="" className="blog-small-image" />
                 <div className="d-flex columns gap-25 j-center">
                   <p className="bold ibm-font">{item.title}</p>
-                  <p className="grey-text source-font text-16">
-                    {item.content.substring(0, 100)}...
-                  </p>
+                  <p
+                    className="grey-text source-font text-16"
+                    dangerouslySetInnerHTML={{
+                      __html: item.content.substring(0, 100) + "...",
+                    }}
+                  ></p>
                 </div>
               </div>
             </div>

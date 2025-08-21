@@ -16,7 +16,8 @@ export default function Content({ blogContent }: ContentProps) {
   const [isDarkTheme, setIsDarkTheme] = useState<string>("");
 
   useEffect(() => {
-    setIsDarkTheme(theme ? "light-theme-editor" : "dark-theme");
+    setIsDarkTheme(theme ? "light-theme" : "dark-theme");
+    console.log("Theme:", theme);
   }, [theme]);
 
   useEffect(() => {
@@ -28,7 +29,6 @@ export default function Content({ blogContent }: ContentProps) {
   }
 
   console.log("Blog İçeriği:", parts);
-
   return (
     <div
       dangerouslySetInnerHTML={{

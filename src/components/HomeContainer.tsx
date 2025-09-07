@@ -24,7 +24,7 @@ const HomeContainer = () => {
   const navigate = useNavigate();
   return (
     <div className="p-40 overflow-y">
-      <div className="d-flex columns gap-25">
+      <div className="d-flex columns gap-65">
         {items.map((item, index) => (
           <div
             className="cursor d-flex columns gap-15-em"
@@ -43,7 +43,6 @@ const HomeContainer = () => {
             </div>
             <div className="d-flex gap-25">
               <div className="d-flex gap-25">
-                <img src="avatar.jpg" alt="" className="blog-small-image" />
                 <div className="d-flex columns gap-25 j-center">
                   <p className="bold ibm-font">{item.title}</p>
                   <p

@@ -249,6 +249,11 @@ body {
     gap: 25px;
 }
 
+.gap-65 {
+    gap: 65px;
+}
+
+
 .gap-15 {
     gap: 15px;
 }

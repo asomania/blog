@@ -12,5 +12,20 @@ const themeChanger = createSlice({
   },
 });
 
+const tabChanger = createSlice({
+  name: "tabPick",
+  initialState: {
+    tab: "home",
+  },
+  reducers: {
+    setTab: (state, action) => {
+      state.tab = action.payload;
+    },
+  },
+});
+
 export const { setTheme } = themeChanger.actions;
-export default themeChanger.reducer;
+export const { setTab } = tabChanger.actions;
+
+export const themeReducer = themeChanger.reducer;
+export const tabReducer = tabChanger.reducer;

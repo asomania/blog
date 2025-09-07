@@ -9,11 +9,19 @@ import { MdModeNight } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { setTheme } from "../../state/theme";
+import { setTheme, setTab } from "../../state/theme";
 
 const LeftContainer = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const tab = useSelector(
+    (state: {
+      tabPick: {
+        tab: string;
+      };
+    }) => state.tabPick.tab
+  );
+
   const theme = useSelector(
     (state: {
       themePick: {
@@ -22,7 +30,15 @@ const LeftContainer = () => {
     }) => state.themePick.theme
   );
   const [animate, setAnimate] = useState(false);
-
+  const handleTab = (value: string) => {
+    if (value === "home") {
+      dispatch(setTab(value));
+      navigate("/");
+    } else {
+      dispatch(setTab(value));
+      navigate("/aboutme");
+    }
+  };
   const handleClick = (value: boolean) => {
     setAnimate(true);
     setTimeout(() => {
@@ -50,17 +66,17 @@ const LeftContainer = () => {
         </div>
         <div className="gap-25 d-flex columns">
           <GoHome
-            className="logo"
+            className={`logo ${tab === "home" ? "icon-selected" : ""}`}
             size={30}
             color="#636A7E"
-            onClick={() => navigate("/")}
+            onClick={() => handleTab("home")}
             style={{ cursor: "pointer" }}
           />
           <GoInfo
-            className="logo"
+            className={`logo ${tab === "info" ? "icon-selected" : ""}`}
             size={30}
             color="#636A7E"
-            onClick={() => navigate("/aboutme")}
+            onClick={() => handleTab("info")}
           />
           <FiSend className="logo" size={30} color="#636A7E" />
         </div>

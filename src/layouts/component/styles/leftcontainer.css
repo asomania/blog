@@ -1,0 +1,6 @@
+.icon-selected {
+    color: #007bff;
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.6));
+}

@@ -1,10 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import theme from "./theme";
+import { themeReducer, tabReducer } from "./theme";
 
 const store = configureStore({
   reducer: {
-    themePick: theme,
+    themePick: themeReducer,
+    tabPick: tabReducer,
   },
 });
 
 export default store;
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

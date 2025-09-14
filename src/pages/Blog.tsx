@@ -7,7 +7,7 @@ import { BlogType } from "../type/Blog";
 
 export interface Post {
   title: string;
-  createdAt: string;
+  publishedDate: string;
   author: string;
   imageUrl?: string;
   content: string;
@@ -42,6 +42,12 @@ const Blog = () => {
 
     fetchPost();
   }, [id]);
+  let readTime = 0;
+  if (post?.content) {
+    readTime = Math.ceil(post?.content.length / 2000);
+  } else {
+    readTime = 0;
+  }
 
   if (loading) {
     return <div className="text-center p-5">Loading...</div>;
@@ -66,8 +72,8 @@ const Blog = () => {
             <div className="author-details">
               <div className="author-name">{post.author}</div>
               <div className="post-meta">
-                <span>{new Date(post.createdAt).toLocaleDateString()}</span>
-                <span className="read-time">· 5 min read</span>
+                <span>{new Date(post.publishedDate).toLocaleDateString()}</span>
+                <span className="read-time">· {readTime} min read</span>
               </div>
             </div>
           </div>

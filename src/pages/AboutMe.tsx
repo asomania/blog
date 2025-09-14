@@ -8,7 +8,7 @@ const AboutMe: React.FC = () => {
       <div className="hero-section">
         <div className="hero-content">
           <h1>
-            Merhaba, Ben <span className="highlight">Eren</span>
+            Hello, I'm <span className="highlight">Eren</span>
           </h1>
           <h2>Software Developer</h2>
           <div className="scrolling-text">
@@ -21,39 +21,39 @@ const AboutMe: React.FC = () => {
         </div>
         <div className="hero-image">
           <div className="image-frame">
-            <img src="avatar.jpg" alt="Profil Fotoğrafı" />
+            <img src="avatar.jpg" alt="Profile Photo" />
           </div>
         </div>
       </div>
 
       <div className="about-section">
-        <h3>Hakkımda</h3>
+        <h3>About Me</h3>
         <p>
-          Merhaba, ben Eren Küçük. Yazılıma olan ilgim çocukluk yıllarıma
-          dayanıyor ama bu ilgiyi profesyonel bir tutkuya dönüştürmem son birkaç
-          yıl içinde gerçekleşti. Web teknolojileri alanında özellikle ön yüz
-          geliştirme üzerine yoğunlaştım ve kullanıcı odaklı, temiz kodlu
-          projeler üretmeye özen gösteriyorum.
+          Hello, I'm Eren Küçük. My interest in programming started in my
+          childhood, but I transformed this interest into a professional passion
+          a few years ago. I focused on frontend development and producing
+          user-focused, clean code projects. I pay attention to creating
+          user-focused, clean code projects.
         </p>
         <p>
-          1.5 yılı aşkın profesyonel tecrübem boyunca hem bireysel hem ekip
-          projelerinde çalıştım; sade, hızlı ve erişilebilir arayüzler
-          geliştirdim. Frontend tarafında güçlü olsam da son zamanlarda veri
-          analizi ve yazılımın diğer yönleriyle de ilgilenmeye başladım. Yazılım
-          mühendisliğini bir meslekten öte, çok yönlü bir üretim alanı olarak
-          görüyorum.
+          With 1.5 years of professional experience, I worked on both individual
+          and team projects; I developed simple, fast and accessible interfaces.
+          Although I'm strong on the frontend side, I've recently started to get
+          interested in data analysis and other aspects of software. I see
+          software engineering as more than just a profession, but as a
+          versatile field of production.
         </p>
         <p>
-          Hayallerim arasında kendi işimi kurmak, finansal özgürlüğe ulaşmak ve
-          dünyayı gezmek var. Boş zamanlarımda teknolojik gelişmeleri takip
-          ediyor, yeni şeyler öğreniyor ve kendimi farklı alanlarda geliştirmeye
-          çalışıyorum. Bu blog sayfası da hem öğrendiklerimi paylaşmak hem de
-          yolculuğumu kayıt altına almak için var.
+          Among my dreams are starting my own business, achieving financial
+          freedom and traveling the world. In my free time, I follow
+          technological developments, learn new things and try to develop myself
+          in different areas. This blog page exists both to share what I've
+          learned and to record my journey.
         </p>
       </div>
       {/* Skills Section */}
       <div className="skills-section">
-        <h3>Yeteneklerim</h3>
+        <h3>My Skills</h3>
         <div className="skills-grid">
           <div className="skill-category">
             <h4>Frontend</h4>
@@ -74,21 +74,12 @@ const AboutMe: React.FC = () => {
             </ul>
           </div>
           <div className="skill-category">
-            <h4>Veri & Diğer</h4>
+            <h4>Data & Others</h4>
             <ul>
               <li>Python (Pandas, NumPy)</li>
               <li>SQL</li>
               <li>Web Scraping</li>
-              <li>Temel Veri Görselleştirme</li>
-            </ul>
-          </div>
-          <div className="skill-category">
-            <h4>Tasarım</h4>
-            <ul>
-              <li>Figma ile Arayüz Tasarımı</li>
-              <li>Temel UI/UX Bilgisi</li>
-              <li>Mobil Öncelikli Tasarım</li>
-              <li>Prototip Oluşturma</li>
+              <li>Basic Data Visualization</li>
             </ul>
           </div>
         </div>
@@ -96,7 +87,7 @@ const AboutMe: React.FC = () => {
 
       {/* Contact Section */}
       <div className="contact-section">
-        <h3>İletişim</h3>
+        <h3>Contact</h3>
         <div className="contact-methods">
           <a href="mailto:ornek@email.com" className="contact-item">
             <span className="icon">✉️</span>
